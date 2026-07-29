@@ -41,17 +41,17 @@ round-avatar: true
 # You can change the order that they show up on the page by changing the order here.
 # Uncomment the links you want to show and add your information to each one.
 social-network-links:
-  email: "someone@example.com"
-  rss: true  # remove this line if you don't want to show an RSS link at the bottom
-  facebook: deanattali
-  github: daattali
-  twitter: daattali
-  patreon: DeanAttali
-  youtube: "@daattali"
-  whatsapp: 15551212
+  email: "odel.justin@gmail.com"
+  #rss: true  # remove this line if you don't want to show an RSS link at the bottom
+  #facebook: deanattali
+  github: "https://github.com/odeljs"
+  #twitter: daattali
+  #patreon: DeanAttali
+  #youtube: "@daattali"
+  #whatsapp: 15551212
 #  medium: yourname
 #  reddit: yourname or r/yoursubreddit
-#  linkedin: daattali
+linkedin: "https://www.linkedin.com/in/justin-odel-1b1299187/"
 #  xing: yourname
 #  stackoverflow: "3943160/daattali"
 #  snapchat: deanat78
@@ -77,7 +77,7 @@ social-network-links:
 
 # If you want your website to generate an RSS feed, provide a description
 # The URL for the feed will be https://<your_website>/feed.xml
-rss-description: This website is a virtual proof that I'm awesome
+#rss-description: This website is a virtual proof that I'm awesome
 
 ###########################
 # --- General options --- #
@@ -85,8 +85,8 @@ rss-description: This website is a virtual proof that I'm awesome
 
 # Select which social network share links to show in posts
 share-links-active:
-  twitter: true
-  facebook: true
+  twitter: false
+  facebook: false
   linkedin: true
   vk: false
   reddit: false
