@@ -1,6 +1,34 @@
 remote_theme: daattali/beautiful-jekyll@6.0.1
-title: DevOps Shak Homepage
 description: bookmark this page to see updates to what I am working on!
+
+
+###########################################################
+### Welcome to Beautiful Jekyll!
+### This config file is meant for settings that affect your entire website. When you first
+### set up your website you should go through all these settings and edit them, but after
+### the initial set up you won't need to come back to this file often.
+###########################################################
+
+############################
+# --- Required options --- #
+############################
+
+# Name of website
+title: Justin Odel Portfolio
+
+# Your name to show in the footer
+author: Justin Odel
+
+###############################################
+# --- List of links in the navigation bar --- #
+###############################################
+
+navbar-links:
+  About Me: "aboutme"
+  Resources:
+    - Beautiful Jekyll: "https://beautifuljekyll.com"
+    - Learn markdown: "https://www.markdowntutorial.com/"
+  Author's home: "https://deanattali.com"
 
 avatar: "/assets/img/avatar.jpeg"
 round-avatar: true
