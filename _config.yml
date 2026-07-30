@@ -41,8 +41,8 @@ round-avatar: true
 # Uncomment the links you want to show and add your information to each one.
 social-network-links:
   email: "odel.justin@gmail.com"
-  github: "https://github.com/odeljs"
-  linkedin: "https://www.linkedin.com/in/justin-odel-1b1299187/"
+  github: "odeljs"
+  linkedin: "justin-odel-1b1299187"
   #rss: true  # remove this line if you don't want to show an RSS link at the bottom
   #facebook: deanattali
   #twitter: daattali
