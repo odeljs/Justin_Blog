@@ -26,7 +26,7 @@ author: Justin Odel
 navbar-links:
   About Me: ""
   Blog: ""
-  Post Moretums: ""
+  Post Moretums: "post_moretum"
   Projects: ""
   
 
@@ -303,3 +303,10 @@ exclude:
 plugins:
   - jekyll-paginate
   - jekyll-sitemap
+
+############Collection################
+collections:
+  post_moretum:
+    output: true
+    permalink: /post_moretum/:path/
+
