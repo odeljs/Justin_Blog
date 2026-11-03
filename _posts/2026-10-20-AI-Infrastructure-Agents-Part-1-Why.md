@@ -1,6 +1,6 @@
 ---
-title: "AI Infrastructure Agents: Why We're Letting Agents Touch Our Infrastructure (Safely)"
-date: 2026-10-28
+title: "AI Infrastructure Agents: Part-1 Why We're Letting Agents Touch Our Infrastructure (Safely)"
+date: 2026-10-20
 author: Justin Odel
 tags: [cloud, ai, agents, devops, iac, terraform, security, architecture]
 description: "Why we're building a platform for AI agents that write infrastructure code, fix compliance findings, and review PRs — and the guardrails that make that a good idea instead of a terrifying one."

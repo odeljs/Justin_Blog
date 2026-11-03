@@ -1,6 +1,6 @@
 ---
-title: "AI Infrastructure Agents: The Execution Plane"
-date: 2026-10-29
+title: "AI Infrastructure Agents: Part-5 The Execution Plane"
+date: 2026-11-3
 author: Justin Odel
 tags: [cloud, aws, ai, agents, architecture, sqs, lambda, eventbridge, dynamodb, agentcore, reliability, security]
 description: "Agent workers run model-generated reasoning against untrusted input. Here's why ours are stateless Lambdas behind SQS, structurally unable to write task state — with EventBridge and a single writer persisting to DynamoDB — and the bug a live test caught that unit tests didn't."

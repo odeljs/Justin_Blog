@@ -1,5 +1,5 @@
 ---
-title: "AI Infrastructure Agents: The Policy Plane"
+title: "AI Infrastructure Agents: Part-4 The Policy Plane"
 date: 2026-10-29
 author: Justin Odel
 tags: [cloud, aws, ai, agents, policy, guardrails, cedar, agentcore, devops, iac, security]

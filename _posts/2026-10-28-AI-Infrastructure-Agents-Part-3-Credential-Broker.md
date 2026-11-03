@@ -1,5 +1,5 @@
 ---
-title: "AI Infrastructure Agents: The Credential Broker"
+title: "AI Infrastructure Agents: Part-3 The Credential Broker"
 date: 2026-10-28
 author: Justin Odel
 tags: [cloud, ai, agents, security, credentials, secrets, git, lambda, dynamodb]

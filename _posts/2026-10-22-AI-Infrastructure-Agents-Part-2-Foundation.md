@@ -1,6 +1,6 @@
 ---
-title: "AI Infrastructure Agents: Building the Read-Only Foundation"
-date: 2026-10-28
+title: "AI Infrastructure Agents: Part-2 Building the Read-Only Foundation"
+date: 2026-10-22
 author: Justin Odel
 tags: [cloud, ai, agents, devops, iac, terraform, security, policy, bedrock]
 description: "Before an agent can propose a fix, it has to safely read the world. Here's the Tier 0 foundation — a read-only agent that can run terraform plan and nothing else, gated by a default-deny policy engine."
