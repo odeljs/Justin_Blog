@@ -1,14 +1,12 @@
 ---
-layout: post
-title: Taming-Client-Lambda-Deployments-Part-1
-subtitle: Taming Client Lambda Deployments - Why We're Rethinking How We Ship Serverless Code
-#cover-img: /assets/img/path.jpg
-#thumbnail-img: /assets/img/thumb.png
-#share-img: /assets/img/path.jpg
-tags: [cloud, aws, lambda, terraform, devops, cicd, serverless]
+title: "Taming Client Lambda Deployments: Why We're Rethinking How We Ship Serverless Code"
+date: 2026-10-26
 author: Justin Odel
+tags: [cloud, aws, lambda, terraform, devops, cicd, serverless]
+description: "Our client Lambdas are deployed as committed zips through per-account Terraform, with no rollback, no runtime upgrade path, and plenty of drift. Part 1 of a series on building a proper CI/CD practice for them."
+series: "Building a CI/CD Practice for Client Lambdas"
+part: 1
 ---
-
 
 # Taming Client Lambda Deployments
 
@@ -102,15 +100,15 @@ This series is the solution, built up piece by piece. The framing is deliberatel
 
 ### Step 1: One repo for all client Lambdas
 
-Bring the function source out of the scattered per-account Terraform repos into a single mono-repo: shared handlers and libraries, shared layers, and thin per-account configuration. A fix is made once, in one place.
+Bring the function source out of the scattered per-account Terraform repos into a single mono-repo: one source folder per function shared by every client that runs the same code, shared dependency layers, and thin per-account configuration. A fix is made once, in one place.
 
 ### Step 2: One pipeline, many accounts
 
 A single CI/CD pipeline builds the artifacts once and deploys the right functions into each account, parameterised per account and environment, using cross-account deployment roles.
 
-### Step 3: Promote re-use and draw the Terraform boundary
+### Step 3: Promote re-use and draw the build/deploy boundary
 
-The pre/post-auth logic and the shared driver layer become reusable building blocks; per-account differences shrink to configuration. And we draw a clear line between what Terraform owns (IAM, triggers, networking, log groups — the *infrastructure*) and what the pipeline owns (the *function code and its versions*). Getting that boundary right is what finally kills the silent-overwrite problem.
+The pre/post-auth code and the shared driver layer become reusable building blocks; per-account differences shrink to configuration. And we draw a clear line between what the *pipeline* owns (building the code, once, from source) and what *Terraform* owns (deploying exactly that build, publishing versions, and moving a `live` alias). On top of that sits a drift check that compares what's running against what we last deployed, and stops the pipeline if anything was changed by hand. That combination — reproducible builds, versioned deploys, and drift you can see — is what finally kills the silent-overwrite problem.
 
 ---
 
@@ -118,7 +116,7 @@ The pre/post-auth logic and the shared driver layer become reusable building blo
 
 We're at the start, so these are the targets this series is working toward rather than measured numbers yet:
 
-* **Rollback time:** rebuild-and-pray ➔ repoint an alias in **seconds**
+* **Rollback:** rebuild-and-pray ➔ re-apply the previous recorded deployment in **minutes**, with an alias repoint in **seconds** as the emergency option
 * **Places to patch a shared fix:** **N repos** ➔ **1 repo**
 * **Runtime upgrade:** per-account manual scramble ➔ **one** deliberate, repeatable step rolled out everywhere
 * **Silent drift / overwrites:** possible and invisible ➔ **detected and surfaced**
@@ -137,5 +135,7 @@ I'll revisit these with real before/after numbers as the pattern lands.
 ## Conclusion
 
 Our client Lambdas work today, but they're shipped as committed zips with no rollback, no reproducible build, and no drift detection — duplicated across every client account. The fix is a mature CI/CD practice built on one repo, one pipeline, and shared, reusable building blocks, with a clear line between what Terraform owns and what the pipeline owns.
+
+**Call-to-Action:** How are you deploying Lambdas across many accounts today — one pipeline fanning out, or Terraform per account? I'd love to hear what's worked and what's bitten you.
 
 *Next up — Part 2: One Repo, One Pipeline — Designing the Target Architecture.*
